@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./Services.css";
 import { services } from "../../data";
-import ServiceCard from "./ServiceCard/serviceCard";
+import ServiceCard from "./ServiceCard/ServiceCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
