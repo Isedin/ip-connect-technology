@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.logo h1 {
+  font-size: 1.05rem;
+  color: #111;
+  line-height: 1.05;
+}
+
+.logo h1 span {
+  display: block;
+  color: #2f80ed;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}

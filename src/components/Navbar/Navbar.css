@@ -1,0 +1,32 @@
+.navbar {
+  width: 100%;
+  padding: 1rem 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav_tabs {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar_link {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .nav_tabs {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

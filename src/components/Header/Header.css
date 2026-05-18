@@ -1,0 +1,173 @@
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 620px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero_media,
+.hero_fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero_media {
+  z-index: 1;
+}
+
+.hero_fallback {
+  z-index: 0;
+}
+
+.hero_overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.82)),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.58) 45%,
+      rgba(255, 255, 255, 0.72) 100%
+    );
+}
+
+#header {
+  position: relative !important;
+  z-index: 1;
+  min-height: 560px;
+}
+
+#header .container.full_height {
+  min-height: auto;
+  padding-bottom: 0;
+}
+
+.achievement_container {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-72px, -7vh, -36px);
+}
+
+.description {
+  overflow: visible;
+  z-index: 10;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#header .container {
+  padding-top: 2rem;
+}
+
+#header .container > .row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+#header .container .row .column:first-child {
+  flex: 1;
+}
+
+#header .container .buttons_container {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+#header .image_container {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: var(--radius-2);
+  transition: var(--transition);
+  box-shadow: var(--shadow-1);
+}
+
+#header .image_container img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#header .image_container:hover {
+  transform: scale(1.03);
+}
+
+#header .title {
+  font-size: clamp(1.9rem, 4.5vw + 0.2rem, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: 0.2px;
+  margin: 0.35rem 0 0.8rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+#header .description {
+  font-size: clamp(0.98rem, 0.6vw + 0.8rem, 1.12rem);
+  max-width: 75ch;
+  margin-inline: auto;
+  text-align: left;
+}
+
+#header .hero_badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+#header .hero_badges .badge {
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-5);
+  background: rgba(47, 128, 237, 0.09);
+  border: 1px solid rgba(47, 128, 237, 0.16);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 900px) {
+  .hero-bg {
+    height: 680px;
+  }
+
+  #header .row {
+    flex-direction: column;
+  }
+
+  #header .title,
+  #header .description,
+  #header .text_muted {
+    text-align: left;
+  }
+
+  #header .buttons_container {
+    justify-content: flex-start;
+  }
+
+  #header .image_container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 901px) {
+  #header .column:first-child {
+    text-align: center;
+  }
+}

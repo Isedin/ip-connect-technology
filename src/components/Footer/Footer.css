@@ -1,0 +1,11 @@
+.footer {
+  padding: 2rem 0;
+  background: #111;
+  color: #fff;
+}
+
+.footer .container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}

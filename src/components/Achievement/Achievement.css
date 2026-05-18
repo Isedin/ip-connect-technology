@@ -1,0 +1,184 @@
+.stats {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-56px, -6vh, -28px);
+}
+
+#stats .stats_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: stretch;
+  grid-auto-flow: row dense;
+}
+
+#stats .stat_card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.1rem;
+  border-radius: var(--radius-3);
+  background: var(--color-ui-secondary);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+#stats .stat_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+#stats .stat_card .icon_container {
+  margin: 0.2rem auto 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.3rem;
+}
+
+#stats .stat_card .count_row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+#stats .stat_card .title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+@media (max-width: 1040px) {
+  #stats .stats_container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #stats .stat_card .title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .stats {
+    margin-top: -20px;
+  }
+
+  #stats .stats_container {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  #stats .stat_card {
+    padding: 0.95rem;
+  }
+
+  #stats .stat_card .icon_container {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+
+  #stats .stat_card .title {
+    font-size: 1.5rem;
+  }
+
+  #stats .stat_card small {
+    font-size: 0.9rem;
+  }
+}
+
+/* Odometer */
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-default {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.odometer.odometer-auto-theme .odometer-digit,
+.odometer.odometer-theme-default .odometer-digit {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer,
+.odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
+  display: inline-block;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner,
+.odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+  text-align: left;
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon,
+.odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
+  display: block;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner,
+.odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-value,
+.odometer.odometer-theme-default .odometer-digit .odometer-value {
+  display: block;
+  transform: translateZ(0);
+}
+
+.odometer.odometer-auto-theme
+  .odometer-digit
+  .odometer-value.odometer-last-value,
+.odometer.odometer-theme-default
+  .odometer-digit
+  .odometer-value.odometer-last-value {
+  position: absolute;
+}
+
+.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
+  transition: transform 2s;
+}
+
+.odometer.odometer-auto-theme.odometer-animating-up.odometer-animating
+  .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-up.odometer-animating
+  .odometer-ribbon-inner {
+  transform: translateY(-100%);
+}
+
+.odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-down
+  .odometer-ribbon-inner {
+  transform: translateY(-100%);
+}
+
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating
+  .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-down.odometer-animating
+  .odometer-ribbon-inner {
+  transition: transform 2s;
+  transform: translateY(0);
+}
+
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-default {
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.1em;
+}
+
+.odometer.odometer-auto-theme .odometer-value,
+.odometer.odometer-theme-default .odometer-value {
+  text-align: center;
+}

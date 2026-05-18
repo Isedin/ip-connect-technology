@@ -1,0 +1,11 @@
+export { default as AboutMain } from "./office-networking.jpg";
+export { default as Glasfaser } from "./glasfaser-usb-cabel.png";
+export { default as AboutWifi } from "./about-wifi.png";
+export { default as IpConnectLogo } from "./ip-connect-logo.png";
+export { default as NetzwerkVideo } from "./netzwerk-video.mp4";
+export { default as Netzwerke } from "./netzwerke.mp4";
+export { default as WifiVideo } from "./wifi-video.mp4";
+export { default as WorldConnection } from "./world-connection.webm";
+export { default as WorldNetworking } from "./world-networking.jpg";
+export { default as WifiAvatar } from "./wifi-avatar.jpg";
+export { default as CcTv } from "./cctv.jpg";
