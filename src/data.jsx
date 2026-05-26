@@ -6,12 +6,24 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+
 import { GiAlarmClock } from "react-icons/gi";
+
 import { MdFiberManualRecord } from "react-icons/md";
+
 import { HiOutlineShieldCheck } from "react-icons/hi2";
+
+import {
+  FiberVerlegen,
+  KameraUeberwachung,
+  AlarmSysteme,
+  WifiAvatar,
+  WorldNetworking,
+} from "./assets";
 
 export const navTabs = [
   { id: "header", name: "Start" },
+  { id: "project", name: "Projekte" },
   { id: "services", name: "Leistungen" },
   { id: "about", name: "Über Uns" },
   { id: "gallery", name: "Galerie" },
@@ -25,24 +37,28 @@ export const services = [
     description:
       "Installation und Wartung moderner Glasfaserlösungen für schnelle und stabile Verbindungen.",
   },
+
   {
     name: "WiFi Lösungen",
     icon: <FaWifi />,
     description:
       "Leistungsstarke WLAN-Netze für Wohnungen, Häuser, Büros und Gewerbeflächen.",
   },
+
   {
     name: "Alarmsysteme",
     icon: <GiAlarmClock />,
     description:
       "Zuverlässige Sicherheitslösungen für den Schutz von Privat- und Geschäftsobjekten.",
   },
+
   {
     name: "Kameraüberwachung",
     icon: <FaVideo />,
     description:
       "Moderne Videoüberwachungssysteme mit klarer Bildqualität und sicherem Zugriff.",
   },
+
   {
     name: "Netzwerkkabel",
     icon: <FaNetworkWired />,
@@ -59,6 +75,7 @@ export const contacts = [
     buttonTitle: "Anrufen",
     icon: <FaPhoneAlt />,
   },
+
   {
     name: "E-Mail",
     value: "info@ip-connect.ch",
@@ -66,6 +83,7 @@ export const contacts = [
     buttonTitle: "E-Mail senden",
     icon: <FaEnvelope />,
   },
+
   {
     name: "Standort",
     value: "Schweiz",
@@ -81,19 +99,59 @@ export const aboutHighlights = [
     label: "Glasfaser",
     title: "Schnelle Verbindungen",
   },
+
   {
     icon: <FaWifi />,
     label: "WiFi",
     title: "Stabiles Netzwerk",
   },
+
   {
     icon: <HiOutlineShieldCheck />,
     label: "Sicherheit",
     title: "Alarm & Kamera",
   },
+
   {
     icon: <FaNetworkWired />,
     label: "Netzwerk",
     title: "Saubere Verkabelung",
+  },
+];
+
+export const projects = [
+  {
+    title: "Glasfaser Installation",
+    image: FiberVerlegen,
+    description:
+      "Professionelle Verlegung moderner Glasfaserleitungen für schnelle und stabile Verbindungen.",
+  },
+
+  {
+    title: "WiFi Netzwerke",
+    image: WifiAvatar,
+    description:
+      "Leistungsstarke WLAN-Lösungen für Wohnungen, Büros und Gewerbeflächen.",
+  },
+
+  {
+    title: "Kameraüberwachung",
+    image: KameraUeberwachung,
+    description:
+      "Moderne CCTV- und Sicherheitslösungen mit sicherem Fernzugriff.",
+  },
+
+  {
+    title: "Alarmsysteme",
+    image: AlarmSysteme,
+    description:
+      "Zuverlässige Sicherheitslösungen für Privat- und Geschäftsobjekte.",
+  },
+
+  {
+    title: "Netzwerkinfrastruktur",
+    image: WorldNetworking,
+    description:
+      "Saubere strukturierte Verkabelung und moderne Netzwerktechnik.",
   },
 ];

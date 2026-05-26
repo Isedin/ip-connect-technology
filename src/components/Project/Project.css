@@ -1,0 +1,112 @@
+#project {
+  padding: 5rem 0;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+#project .project_top {
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+#project .projects_container {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+#project .slick-track {
+  display: flex !important;
+}
+
+#project .slick-slide {
+  height: inherit !important;
+  padding: 0 12px;
+}
+
+#project .slick-slide > div {
+  height: 100%;
+}
+
+#project .project_card {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  box-shadow: 0 18px 45px rgba(47, 128, 237, 0.16);
+}
+
+#project .project_card:hover img {
+  transform: scale(1.12);
+}
+
+#project .image_container {
+  height: 290px;
+  overflow: hidden;
+}
+
+#project .image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+#project .box {
+  padding: 0 20px 22px;
+  color: #fff;
+}
+
+#project .details {
+  padding: 28px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.72);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #111827;
+  text-align: center;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  transition: 0.4s ease;
+}
+
+#project .project_card:hover .details {
+  left: 0;
+}
+
+#project .name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+#project .text_muted_description {
+  color: #374151;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+@media (max-width: 600px) {
+  #project {
+    padding: 4rem 0;
+  }
+
+  #project .project_card {
+    min-height: 330px;
+  }
+
+  #project .image_container {
+    height: 230px;
+  }
+
+  #project .name {
+    font-size: 1.2rem;
+  }
+}
