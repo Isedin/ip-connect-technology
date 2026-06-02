@@ -118,6 +118,31 @@
   justify-content: center;
 }
 
+#contact .contact_status {
+  margin: 0.4rem 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#contact .contact_status.success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+#contact .contact_status.error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+#contact button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 @media (max-width: 900px) {
   #contact .container {
     grid-template-columns: 1fr;

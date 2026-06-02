@@ -10,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const container = useRef(null);
 
+  
+
   const [form, setForm] = useState({
     firstname: "",
     lastname: "",
@@ -17,6 +19,9 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+
+  const [status, setStatus] = useState({ type: "", msg: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,12 +32,48 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus({ type: "", msg: "" });
+    setLoading(true);
 
-    console.log(form);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-    alert("Nachricht gesendet!");
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error("Send failed");
+      }
+
+      setStatus({
+        type: "success",
+        msg: "Ihre Nachricht wurde erfolgreich gesendet.",
+      });
+
+      setForm({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+
+      setStatus({
+        type: "error",
+        msg: "Fehler beim Senden. Bitte versuchen Sie es erneut.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   useGSAP(
@@ -133,12 +174,18 @@ const Contact = () => {
               onChange={handleChange}
               required
             />
-          </div>
 
-          <div className="contact_form_bottom">
-            <button className="btn btn_primary" type="submit">
-              Nachricht senden
-            </button>
+            {status.msg && (
+              <div className={`contact_status ${status.type}`}>
+                {status.msg}
+              </div>
+            )}
+
+            <div className="contact_form_bottom">
+              <button className="btn btn_primary" type="submit" disabled={loading}>
+                {loading ? "Senden..." : "Nachricht senden"}
+              </button>
+            </div>
           </div>
         </form>
 
