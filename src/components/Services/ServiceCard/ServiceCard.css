@@ -5,6 +5,8 @@
   border: solid 2px transparent;
   transition: var(--transition);
   box-shadow: var(--shadow-1);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
 }
 
 .service_card:hover {

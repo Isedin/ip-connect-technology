@@ -1,5 +1,8 @@
 #services {
   position: relative;
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #06101d 0%, #091827 100%);
+  overflow: hidden;
 }
 
 #services .services_top {
@@ -8,8 +11,19 @@
   margin: 0 auto;
 }
 
+#services .title {
+  color: #ffffff;
+}
+
+#services .sub_title {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0.7rem;
+}
+
 #services .services_container {
-  margin-top: 2.4rem;
+  margin-top: 2.8rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;

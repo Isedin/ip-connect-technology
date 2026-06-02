@@ -83,6 +83,7 @@ const Header = () => {
                 <span className="badge">Alarmsysteme</span>
                 <span className="badge">Kameraüberwachung</span>
                 <span className="badge">Netzwerkkabel</span>
+                <span className="badge">Gegensprechanlagen</span>
               </div>
             </div>
 

@@ -31,12 +31,12 @@
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.82)),
+    linear-gradient(rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.9)),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.78) 0%,
-      rgba(255, 255, 255, 0.58) 45%,
-      rgba(255, 255, 255, 0.72) 100%
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.62) 45%,
+      rgba(255, 255, 255, 0.82) 100%
     );
 }
 
@@ -44,24 +44,7 @@
   position: relative !important;
   z-index: 1;
   min-height: 560px;
-}
-
-#header .container.full_height {
-  min-height: auto;
-  padding-bottom: 0;
-}
-
-.achievement_container {
-  position: relative;
-  z-index: 1;
-  margin-top: clamp(-72px, -7vh, -36px);
-}
-
-.description {
-  overflow: visible;
-  z-index: 10;
-  max-width: 100%;
-  max-height: 100%;
+  overflow: hidden;
 }
 
 #header .container {
@@ -69,23 +52,61 @@
 }
 
 #header .container > .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 450px;
   gap: 2.5rem;
-  margin-bottom: 1.2rem;
+  align-items: center;
   position: relative;
   z-index: 1;
-  align-items: center;
 }
 
-#header .container .row .column:first-child {
-  flex: 1;
+#header .column:first-child {
+  text-align: center;
 }
 
-#header .container .buttons_container {
+#header .title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: 0.2px;
+  margin: 0.35rem 0 0.9rem;
+  text-align: center;
+}
+
+#header .description {
+  font-size: clamp(0.98rem, 0.6vw + 0.8rem, 1.12rem);
+  max-width: 75ch;
+  margin-inline: auto;
+  line-height: 1.7;
+  text-align: left;
+}
+
+#header .hero_badges {
   display: flex;
-  gap: 1.2rem;
-  margin-top: 2rem;
+  justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  overflow-x: auto;
+  padding: 0.2rem 0 0.5rem;
+  scrollbar-width: none;
+}
+
+#header .hero_badges::-webkit-scrollbar {
+  display: none;
+}
+
+#header .hero_badges .badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-5);
+  background: rgba(47, 128, 237, 0.12);
+  border: 1px solid rgba(47, 128, 237, 0.2);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  backdrop-filter: blur(4px);
 }
 
 #header .image_container {
@@ -108,66 +129,219 @@
   transform: scale(1.03);
 }
 
-#header .title {
-  font-size: clamp(1.9rem, 4.5vw + 0.2rem, 3.8rem);
-  line-height: 1.08;
-  letter-spacing: 0.2px;
-  margin: 0.35rem 0 0.8rem;
-  text-align: center;
-  text-wrap: balance;
+@media (max-width: 1000px) {
+  #header .container > .row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #header .description {
+    text-align: center;
+  }
+
+  #header .image_container {
+    max-width: 520px;
+  }
 }
 
-#header .description {
-  font-size: clamp(0.98rem, 0.6vw + 0.8rem, 1.12rem);
-  max-width: 75ch;
-  margin-inline: auto;
-  text-align: left;
-}
-
-#header .hero_badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1.4rem;
-}
-
-#header .hero_badges .badge {
-  padding: 0.65rem 0.95rem;
-  border-radius: var(--radius-5);
-  background: rgba(47, 128, 237, 0.09);
-  border: 1px solid rgba(47, 128, 237, 0.16);
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  backdrop-filter: blur(4px);
-}
-
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .hero-bg {
-    height: 680px;
+    height: 700px;
   }
 
-  #header .row {
-    flex-direction: column;
+  #header {
+    min-height: auto;
   }
 
-  #header .title,
-  #header .description,
-  #header .text_muted {
-    text-align: left;
+  #header .container {
+    padding-top: 1.4rem;
+    padding-bottom: 3rem;
   }
 
-  #header .buttons_container {
+  #header .title {
+    font-size: clamp(1.7rem, 9vw, 2.45rem);
+    line-height: 1.12;
+    max-width: 100%;
+  }
+
+  #header .description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  #header .hero_badges {
     justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  #header .hero_badges .badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
   }
 
   #header .image_container {
     max-width: 100%;
+    border-radius: 18px;
   }
 }
 
-@media (min-width: 901px) {
-  #header .column:first-child {
+@media (max-width: 640px) {
+  #header {
+    overflow: hidden;
+  }
+
+  #header .container {
+    width: min(100%, 92%);
+    overflow: hidden;
+  }
+
+  #header .container > .row {
+    gap: 1.8rem;
+  }
+
+  #header .title {
+    font-size: 1.75rem;
+    line-height: 1.15;
     text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  #header .description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  #header .hero_badges {
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  #header .image_container {
+    width: 100%;
+    max-width: 100%;
+    height: 260px;
+    border-radius: 18px;
+  }
+
+  #header .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bg {
+    height: 620px;
+  }
+
+  #header {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  #header .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.4rem 1rem 2.5rem;
+    overflow: hidden;
+  }
+
+  #header .container > .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #header .column {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  #header .title {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.85rem;
+    line-height: 1.18;
+    text-align: center;
+    margin: 0 auto 0.8rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #header .description {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #header .hero_badges {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0.4rem 0 0.7rem;
+    margin-top: 1.2rem;
+  }
+
+  #header .hero_badges .badge {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    padding: 0.48rem 0.7rem;
+  }
+
+  #header .image_container {
+    width: 100%;
+    max-width: 100%;
+    height: 235px;
+    border-radius: 18px;
+    margin: 0 auto;
+  }
+
+  #header .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  #header .hero_badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    overflow: visible;
+    padding: 0;
+    margin-top: 1.2rem;
+  }
+
+  #header .hero_badges .badge {
+    width: 100%;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.45rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

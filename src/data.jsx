@@ -13,6 +13,8 @@ import { MdFiberManualRecord } from "react-icons/md";
 
 import { HiOutlineShieldCheck } from "react-icons/hi2";
 
+import { MdOutlineSettingsInputAntenna } from "react-icons/md";
+
 import {
   FiberVerlegen,
   KameraUeberwachung,
@@ -64,6 +66,13 @@ export const services = [
     icon: <FaNetworkWired />,
     description:
       "Saubere und strukturierte Netzwerkverkabelung für langlebige technische Infrastruktur.",
+  },
+
+  {
+    name: "Gegensprechanlagen",
+    icon: <MdOutlineSettingsInputAntenna />,
+    description:
+      "Moderne Türkommunikation und Gegensprechanlagen für Wohn- und Geschäftsobjekte.",
   },
 ];
 

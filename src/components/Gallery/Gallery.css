@@ -1,6 +1,8 @@
 #gallery {
   padding: 5rem 0;
   overflow: hidden;
+  background: linear-gradient(180deg, #091827 0%, #06101d 100%);
+  color: #fff;
 }
 
 #gallery .container {
@@ -12,11 +14,12 @@
   text-align: center;
   margin-bottom: 0.8rem;
   font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
 }
 
 #gallery .sub_title {
   text-align: center;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 2rem;
   font-size: 1.05rem;
 }
@@ -62,7 +65,7 @@
   border: none;
   cursor: pointer;
 
-  background: #eaf2ff;
+  background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 
   transition: 0.3s ease;
