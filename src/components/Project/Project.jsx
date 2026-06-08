@@ -41,6 +41,7 @@ const Project = () => {
     infinite: true,
     speed: 1200,
     slidesToShow: 2,
+    slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0px",
     pauseOnHover: true,
