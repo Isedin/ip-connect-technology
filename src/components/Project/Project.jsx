@@ -42,7 +42,7 @@ const Project = () => {
     speed: 1200,
     slidesToShow: 2,
     centerMode: true,
-    centerPadding: "90px",
+    centerPadding: "0px",
     pauseOnHover: true,
     autoplay: true,
     autoplaySpeed: 2500,
