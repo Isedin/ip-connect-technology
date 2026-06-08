@@ -38,17 +38,17 @@ const Project = () => {
   );
 
   const settings = {
-  infinite: true,
-  speed: 1600,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  centerMode: false,
-  centerPadding: "0px",
-  pauseOnHover: true,
-  autoplay: true,
-  autoplaySpeed: 2500,
-  arrows: false,
-};
+    infinite: true,
+    speed: 1600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+    pauseOnHover: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+  };
 
   return (
     <section id="project" ref={container}>
