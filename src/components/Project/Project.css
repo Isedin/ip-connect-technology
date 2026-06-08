@@ -143,3 +143,17 @@
     line-height: 1.25;
   }
 }
+
+@media (max-width: 600px) {
+  #project .box .name {
+    font-size: 1.15rem;
+    line-height: 1.25;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  #project .details .name {
+    font-size: 1.15rem;
+  }
+}
