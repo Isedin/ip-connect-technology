@@ -53,14 +53,6 @@ const Project = () => {
           slidesToShow: 1,
           centerMode: false,
           centerPadding: "0px",
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          centerPadding: "0px",
           arrows: false,
         },
       },
