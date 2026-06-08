@@ -114,3 +114,32 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 600px) {
+  #project .projects_container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #project .slick-list {
+    overflow: hidden;
+  }
+
+  #project .slick-slide {
+    padding: 0 16px;
+  }
+
+  #project .project_card {
+    width: 100%;
+    min-height: 360px;
+  }
+
+  #project .image_container {
+    height: 240px;
+  }
+
+  #project .name {
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+}

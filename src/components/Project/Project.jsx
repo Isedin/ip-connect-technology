@@ -47,15 +47,24 @@ const Project = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     responsive: [
-      {
-        breakpoint: 900,
-        settings: { slidesToShow: 1, centerPadding: "40px" },
-      },
-      {
-        breakpoint: 600,
-        settings: { slidesToShow: 1, centerPadding: "15px" },
-      },
-    ],
+  {
+    breakpoint: 900,
+    settings: {
+      slidesToShow: 1,
+      centerMode: false,
+      centerPadding: "0px",
+    },
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 1,
+      centerMode: false,
+      centerPadding: "0px",
+      arrows: false,
+    },
+  },
+],
   };
 
   return (
