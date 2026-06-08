@@ -1,5 +1,8 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import "./Project.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { projects } from "../../data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -24,13 +27,33 @@ const Project = () => {
       timeline.from("#project .title", { opacity: 0, y: -50 });
       timeline.from("#project .sub_title", { opacity: 0, y: -50 });
       timeline.fromTo(
-        "#project .project_card",
-        { x: 80, opacity: 0 },
-        { opacity: 1, stagger: 0.2, x: 0 }
+        "#project .slick-slide",
+        { x: 100, opacity: 0 },
+        { opacity: 1, stagger: 0.25, x: 0 }
       );
     },
     { scope: container }
   );
+
+  const settings = {
+    infinite: true,
+    speed: 1600,
+    slidesToShow: 2,
+    centerMode: true,
+    pauseOnHover: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: 0,
+          arrows: false,
+        },
+      },
+    ],
+  };
 
   return (
     <section id="project" ref={container}>
@@ -43,9 +66,9 @@ const Project = () => {
         </h3>
       </div>
 
-      <div className="projects_container">
+      <Slider {...settings} className="projects_container">
         {projects.map((project, index) => (
-          <article className="project_card" key={index}>
+          <React.Fragment key={index}>
             <div className="image_container">
               <img src={project.image} alt={project.title} />
             </div>
@@ -58,9 +81,9 @@ const Project = () => {
               <h3 className="name">{project.title}</h3>
               <p className="text_muted_description">{project.description}</p>
             </div>
-          </article>
+          </React.Fragment>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 };
