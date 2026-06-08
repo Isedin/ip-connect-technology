@@ -1,14 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./Project.css";
-import SlickSlider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { projects } from "../../data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-const Slider = SlickSlider.default || SlickSlider;
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,36 +24,13 @@ const Project = () => {
       timeline.from("#project .title", { opacity: 0, y: -50 });
       timeline.from("#project .sub_title", { opacity: 0, y: -50 });
       timeline.fromTo(
-        "#project .slick-slide",
-        { x: 100, opacity: 0 },
-        { opacity: 1, stagger: 0.25, x: 0 }
+        "#project .project_card",
+        { x: 80, opacity: 0 },
+        { opacity: 1, stagger: 0.2, x: 0 }
       );
     },
     { scope: container }
   );
-
-  const settings = {
-    infinite: true,
-    speed: 1200,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "0px",
-    pauseOnHover: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    responsive: [
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          centerPadding: "0px",
-          arrows: false,
-        },
-      },
-    ],
-  };
 
   return (
     <section id="project" ref={container}>
@@ -71,9 +43,9 @@ const Project = () => {
         </h3>
       </div>
 
-      <Slider {...settings} className="projects_container">
+      <div className="projects_container">
         {projects.map((project, index) => (
-          <div className="project_card" key={index}>
+          <article className="project_card" key={index}>
             <div className="image_container">
               <img src={project.image} alt={project.title} />
             </div>
@@ -86,9 +58,9 @@ const Project = () => {
               <h3 className="name">{project.title}</h3>
               <p className="text_muted_description">{project.description}</p>
             </div>
-          </div>
+          </article>
         ))}
-      </Slider>
+      </div>
     </section>
   );
 };
