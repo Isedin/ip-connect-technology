@@ -62,37 +62,12 @@ const Header = () => {
 
       <header id="header" ref={container}>
         <div className="container section-pad-top">
-          <div className="row">
-            <div className="column">
-              <h1 className="title">
-                <span className="g-text">
-                  Zuverlässige Netzwerk- und Sicherheitslösungen
-                </span>
-              </h1>
-
-              <p className="text_muted description">
-                IP-Connect Technology bietet professionelle Lösungen in den
-                Bereichen Glasfaser, WiFi, Alarmsysteme, Kameraüberwachung und
-                Netzwerkkabel – zuverlässig, modern und auf Ihre Anforderungen
-                abgestimmt.
-              </p>
-
-              <div className="hero_badges">
-                <span className="badge">Glasfaser</span>
-                <span className="badge">WiFi</span>
-                <span className="badge">Alarmsysteme</span>
-                <span className="badge">Kameraüberwachung</span>
-                <span className="badge">Netzwerkkabel</span>
-                <span className="badge">Gegensprechanlagen</span>
-              </div>
-            </div>
-
-            <div className="column">
-              <div className="image_container">
-                <img src={WorldNetworking} alt="IP-Connect Technology" />
-              </div>
-            </div>
-          </div>
+          <div className="hero_full_image">
+          <img
+            src={WorldNetworking}
+            alt="IP-Connect Technology"
+          />
+        </div>
         </div>
       </header>
 
