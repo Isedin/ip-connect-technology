@@ -79,8 +79,8 @@ export const services = [
 export const contacts = [
   {
     name: "Telefon",
-    value: "+41 XXX XXX XXX",
-    href: "tel:+41XXXXXXXX",
+    value: "+41766022334",
+    href: "tel:+41766022334",
     buttonTitle: "Anrufen",
     icon: <FaPhoneAlt />,
   },
@@ -96,7 +96,7 @@ export const contacts = [
   {
     name: "Standort",
     value: "Schweiz",
-    href: "#",
+    href: "https://www.google.com/maps/place/IP-Connect+Technology/@46.9564663,6.6505632,9z/data=!4m10!1m2!2m1!1sip-connect+tecnology+schweiz!3m6!1s0x479015ff6cd26ff5:0xb4b04f9f8986871c!8m2!3d47.4390596!4d8.2096543!15sChxpcC1jb25uZWN0IHRlY25vbG9neSBzY2h3ZWl6kgEbcHJvcGVydHlfbWFuYWdlbWVudF9jb21wYW554AEA!16s%2Fg%2F11zgfm2005?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
     buttonTitle: "Standort ansehen",
     icon: <FaMapMarkerAlt />,
   },
