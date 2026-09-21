@@ -20,7 +20,8 @@ import {
   KameraUeberwachung,
   AlarmSysteme,
   WifiAvatar,
-  WorldNetworking,
+  Netzwerkinfrastruktur,
+  Gegensprechanlagen,
 } from "./assets";
 
 export const navTabs = [
@@ -130,17 +131,10 @@ export const aboutHighlights = [
 
 export const projects = [
   {
-    title: "Glasfaser Installation",
+    title: "Glasfaser",
     image: FiberVerlegen,
     description:
       "Professionelle Verlegung moderner Glasfaserleitungen für schnelle und stabile Verbindungen.",
-  },
-
-  {
-    title: "WiFi Netzwerke",
-    image: WifiAvatar,
-    description:
-      "Leistungsstarke WLAN-Lösungen für Wohnungen, Büros und Gewerbeflächen.",
   },
 
   {
@@ -158,9 +152,22 @@ export const projects = [
   },
 
   {
+    title: "Smarthome",
+    image: WifiAvatar,
+    description:
+      "Intelligente Smarthome-Lösungen für Wohnungen, Büros und Gewerbeflächen.",
+  },
+
+  {
     title: "Netzwerkinfrastruktur",
-    image: WorldNetworking,
+    image: Netzwerkinfrastruktur,
     description:
       "Saubere strukturierte Verkabelung und moderne Netzwerktechnik.",
+  },
+  {
+    title: "Gegensprechanlagen",
+    image: Gegensprechanlagen,
+    description:
+      "Moderne Türkommunikation und Gegensprechanlagen für Wohn- und Geschäftsobjekte.",
   },
 ];

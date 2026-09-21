@@ -15,7 +15,12 @@ const Header = () => {
       timeline.fromTo(
         ".hero_media",
         { scale: 1.08, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.2, ease: "power2.out" }
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+        }
       );
 
       timeline.from(".title", {
@@ -36,13 +41,49 @@ const Header = () => {
         stagger: 0.12,
         duration: 0.45,
       });
+
+      /*
+       * Naslov se pojavi s desne strane,
+       * jednom prođe preko gornjeg dijela videa
+       * i potpuno nestane lijevo.
+       */
+      timeline.fromTo(
+        ".hero_moving_title span",
+        {
+          x: "110vw",
+          opacity: 0,
+        },
+        {
+          keyframes: [
+            {
+              x: "75vw",
+              opacity: 1,
+              duration: 1.2,
+              ease: "power1.out",
+            },
+            {
+              x: "10vw",
+              opacity: 1,
+              duration: 5.5,
+              ease: "none",
+            },
+            {
+              x: "-110%",
+              opacity: 0,
+              duration: 2,
+              ease: "power1.in",
+            },
+          ],
+        },
+        "<0.3"
+      );
     },
     { scope: container }
   );
 
   return (
     <>
-      <div className="hero-bg" aria-hidden>
+      <div className="hero-bg" ref={container} aria-hidden>
         <video
           className="hero_media"
           autoPlay
@@ -55,21 +96,19 @@ const Header = () => {
           <source src={WorldConnection} type="video/mp4" />
         </video>
 
-        <img className="hero_fallback" src={AboutMain} alt="" />
+        <div className="hero_moving_title">
+          <span>Vernetzt. Sicher. Zuverlässig.</span>
+        </div>
 
         <div className="hero_overlay" />
       </div>
 
-      <header id="header" ref={container}>
-        <div className="container section-pad-top">
-          <div className="hero_full_image">
-          <img
-            src={WorldNetworking}
-            alt="IP-Connect Technology"
-          />
-        </div>
-        </div>
-      </header>
+      <section className="networking_banner">
+        <img
+          src={WorldNetworking}
+          alt="IP-Connect Technology Netzwerk- und Sicherheitslösungen"
+        />
+      </section>
 
       <Achievement />
     </>
