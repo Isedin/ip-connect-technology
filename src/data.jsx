@@ -135,6 +135,8 @@ export const projects = [
     image: FiberVerlegen,
     description:
       "Professionelle Verlegung moderner Glasfaserleitungen für schnelle und stabile Verbindungen.",
+    details:
+      "Wir realisieren professionelle Glasfaserinstallationen für Privatkunden, Unternehmen und Gewerbeobjekte. Von der fachgerechten Leitungsverlegung und Vorbereitung der Anschlüsse bis zur sauberen Installation sorgen wir für eine leistungsfähige und zukunftssichere Infrastruktur.",
   },
 
   {
@@ -142,6 +144,8 @@ export const projects = [
     image: KameraUeberwachung,
     description:
       "Moderne CCTV- und Sicherheitslösungen mit sicherem Fernzugriff.",
+    details:
+      "Wir installieren moderne Videoüberwachungssysteme für private und gewerbliche Objekte. Dazu gehören die fachgerechte Positionierung der Kameras, Verkabelung, Einrichtung der Aufzeichnung sowie der sichere Fernzugriff über Smartphone, Tablet oder Computer.",
   },
 
   {
@@ -149,6 +153,8 @@ export const projects = [
     image: AlarmSysteme,
     description:
       "Zuverlässige Sicherheitslösungen für Privat- und Geschäftsobjekte.",
+    details:
+      "Unsere Alarmsysteme bieten zuverlässigen Schutz für Wohnungen, Häuser, Büros und Gewerbeobjekte. Wir übernehmen die Installation und Einrichtung moderner Komponenten und passen das System individuell an die Anforderungen des jeweiligen Objekts an.",
   },
 
   {
@@ -156,6 +162,8 @@ export const projects = [
     image: WifiAvatar,
     description:
       "Intelligente Smarthome-Lösungen für Wohnungen, Büros und Gewerbeflächen.",
+    details:
+      "Wir vernetzen moderne Smarthome-Komponenten zu einer komfortablen und zuverlässigen Gesamtlösung. Je nach Bedarf können verschiedene Geräte und Systeme zentral gesteuert und sinnvoll miteinander verbunden werden.",
   },
 
   {
@@ -163,11 +171,16 @@ export const projects = [
     image: Netzwerkinfrastruktur,
     description:
       "Saubere strukturierte Verkabelung und moderne Netzwerktechnik.",
+    details:
+      "Wir planen und installieren strukturierte Netzwerkinfrastrukturen für Wohnungen, Büros und Gewerbeobjekte. Dazu gehören Netzwerkverkabelung, Anschlussdosen, Verteilerschränke und weitere Komponenten für eine stabile, übersichtliche und langfristig zuverlässige Verbindung.",
   },
+
   {
     title: "Gegensprechanlagen",
     image: Gegensprechanlagen,
     description:
       "Moderne Türkommunikation und Gegensprechanlagen für Wohn- und Geschäftsobjekte.",
+    details:
+      "Wir installieren moderne Gegensprech- und Türkommunikationssysteme für Einfamilienhäuser, Mehrfamilienhäuser und Geschäftsobjekte. Je nach System ermöglichen sie eine komfortable Kommunikation und eine zuverlässige Kontrolle des Zugangs.",
   },
 ];

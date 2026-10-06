@@ -100,13 +100,29 @@
 ========================================= */
 
 @media (max-width: 640px) {
-  #header {
-    height: 480px;
+
+  .hero-bg {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    background: #06101d;
   }
 
-  #header .hero_media {
+  .hero-bg .hero_media {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     object-position: center;
+
+    display: block;
 
     filter:
       brightness(1.05)
@@ -114,17 +130,12 @@
       saturate(1.15);
   }
 
-  #header .hero_fallback {
-    object-fit: cover;
-    object-position: center;
-  }
-
   .hero_moving_title {
     top: 12px;
-    height: 80px;
+    height: 60px;
   }
 
   .hero_moving_title span {
-    font-size: 1.65rem;
+    font-size: 1.35rem;
   }
 }

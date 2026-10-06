@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Project.css";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
   const container = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useGSAP(
     () => {
@@ -28,6 +29,7 @@ const Project = () => {
 
       timeline.from("#project .title", { opacity: 0, y: -50 });
       timeline.from("#project .sub_title", { opacity: 0, y: -50 });
+
       timeline.fromTo(
         "#project .slick-slide",
         { x: 100, opacity: 0 },
@@ -45,41 +47,84 @@ const Project = () => {
     centerMode: false,
     centerPadding: "0px",
     pauseOnHover: true,
-    autoplay: true,
+    autoplay: !selectedProject,
     autoplaySpeed: 2500,
     arrows: false,
   };
 
   return (
-    <section id="project" ref={container}>
-      <div className="project_top">
-        <h1 className="title">
-          <span className="g-text">Unsere Projekte</span>
-        </h1>
-        <h3 className="sub_title">
-          Moderne Netzwerk-, Glasfaser- und Sicherheitslösungen
-        </h3>
-      </div>
+    <>
+      <section id="project" ref={container}>
+        <div className="project_top">
+          <h1 className="title">
+            <span className="g-text">Unsere Projekte</span>
+          </h1>
 
-      <Slider {...settings} className="projects_container">
-        {projects.map((project, index) => (
-          <div className="project_card" key={index}>
-            <div className="image_container">
-              <img src={project.image} alt={project.title} />
-            </div>
+          <h3 className="sub_title">
+            Moderne Netzwerk-, Glasfaser- und Sicherheitslösungen
+          </h3>
+        </div>
 
-            <div className="box">
-              <h1 className="name">{project.title}</h1>
-            </div>
+        <Slider {...settings} className="projects_container">
+          {projects.map((project, index) => (
+            <div className="project_card" key={index}>
+              <div className="image_container">
+                <img src={project.image} alt={project.title} />
+              </div>
 
-            <div className="details">
-              <h3 className="name">{project.title}</h3>
-              <p className="text_muted_description">{project.description}</p>
+              <div className="box">
+                <h1 className="name">{project.title}</h1>
+              </div>
+
+              <div className="details">
+                <h3 className="name">{project.title}</h3>
+
+                <p className="text_muted_description">
+                  {project.description}
+                </p>
+
+                <button
+                  type="button"
+                  className="project_more"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  Mehr erfahren
+                  <span>→</span>
+                </button>
+              </div>
             </div>
+          ))}
+        </Slider>
+      </section>
+
+      {selectedProject && (
+        <div className="project_modal">
+          <div
+            className="project_modal_backdrop"
+            onClick={() => setSelectedProject(null)}
+          />
+
+          <div className="project_modal_content">
+            <button
+              type="button"
+              className="project_modal_close"
+              onClick={() => setSelectedProject(null)}
+              aria-label="Schließen"
+            >
+              ×
+            </button>
+
+            <span className="project_modal_label">
+              IP-Connect Technology
+            </span>
+
+            <h2>{selectedProject.title}</h2>
+
+            <p>{selectedProject.details}</p>
           </div>
-        ))}
-      </Slider>
-    </section>
+        </div>
+      )}
+    </>
   );
 };
 
