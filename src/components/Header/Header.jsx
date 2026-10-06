@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import "./Header.css";
-import Achievement from "../Achievement/Achievement";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { AboutMain, WorldNetworking, WorldConnection } from "../../assets";
+import { AboutMain, WorldConnection } from "../../assets";
 
 const Header = () => {
   const container = useRef(null);
@@ -23,30 +22,6 @@ const Header = () => {
         }
       );
 
-      timeline.from(".title", {
-        opacity: 0,
-        y: -30,
-        duration: 0.7,
-      });
-
-      timeline.from(".description", {
-        opacity: 0,
-        y: -25,
-        duration: 0.7,
-      });
-
-      timeline.from(".hero_badges .badge", {
-        opacity: 0,
-        y: 16,
-        stagger: 0.12,
-        duration: 0.45,
-      });
-
-      /*
-       * Naslov se pojavi s desne strane,
-       * jednom prođe preko gornjeg dijela videa
-       * i potpuno nestane lijevo.
-       */
       timeline.fromTo(
         ".hero_moving_title span",
         {
@@ -82,36 +57,25 @@ const Header = () => {
   );
 
   return (
-    <>
-      <div className="hero-bg" ref={container} aria-hidden>
-        <video
-          className="hero_media"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={AboutMain}
-        >
-          <source src={WorldConnection} type="video/mp4" />
-        </video>
+    <div className="hero-bg" ref={container} aria-hidden>
+      <video
+        className="hero_media"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster={AboutMain}
+      >
+        <source src={WorldConnection} type="video/mp4" />
+      </video>
 
-        <div className="hero_moving_title">
-          <span>Vernetzt. Sicher. Zuverlässig.</span>
-        </div>
-
-        <div className="hero_overlay" />
+      <div className="hero_moving_title">
+        <span>Vernetzt. Sicher. Zuverlässig.</span>
       </div>
 
-      <section className="networking_banner">
-        <img
-          src={WorldNetworking}
-          alt="IP-Connect Technology Netzwerk- und Sicherheitslösungen"
-        />
-      </section>
-
-      <Achievement />
-    </>
+      <div className="hero_overlay" />
+    </div>
   );
 };
 

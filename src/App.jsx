@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Project from "./components/Project/Project";
+import NetworkingBanner from "./components/NetworkingBanner/NetworkingBanner";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
 import Gallery from "./components/Gallery/Gallery";
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Header />
       <Project />
+      <NetworkingBanner />
       <Gallery />
       <Services />
       <About />
